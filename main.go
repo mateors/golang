@@ -1,7 +1,9 @@
 package main
 
 import (
+	"embed"
 	_ "embed"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -9,8 +11,13 @@ import (
 
 var router *gin.Engine
 
+//go:embed template
+var tem embed.FS
+
 func init() {
 	router = gin.Default()
+	fmt.Println(">>", tem)
+	//gin.SetMode(gin.ReleaseMode) //
 }
 
 func main() {
@@ -28,6 +35,22 @@ func main() {
 
 	})
 
+	router.GET("/about", Aboutpage)
+
 	router.Run(":8080")
+
+}
+
+func Aboutpage(c *gin.Context) {
+
+	data := struct {
+		Title string
+		Page  string
+	}{
+
+		Title: "About us",
+		Page:  "About",
+	}
+	c.HTML(http.StatusOK, "about.gohtml", data)
 
 }
