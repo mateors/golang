@@ -1,4 +1,9 @@
+{{template "header.gohtml" .}}
+
 <h1>Hello Gin!</h1>
 {{range $k, $v := .}}
   <p>{{$k}}={{$v}}</p>
 {{end}}
+
+
+{{template "footer.gohtml" .}}

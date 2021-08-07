@@ -7,8 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//go:embed students.txt
-//var f string
 var router *gin.Engine
 
 func init() {
