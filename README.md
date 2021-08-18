@@ -8,3 +8,6 @@ Golang Learning resources
 ## Windows terminal build
 > set GOOS=linux\
 > go build -o appName
+
+## Golang How to upgrade to Go 1.17 
+> go mod tidy -go=1.17
