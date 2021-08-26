@@ -24,7 +24,7 @@ import (
     "mateors.com/encdec"
 )
 ```
-> go mod edit -replace mateors.com/encdec=../encdec
+> go mod edit -replace mateors.com/encdec=../encdec \
 > go get mateors.com/encdec
 
 ## Resource
