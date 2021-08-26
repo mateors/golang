@@ -12,6 +12,9 @@ Golang Learning resources
 ## Golang How to upgrade to Go 1.17 
 > go mod tidy -go=1.17
 
+## Module on by default
+> go env -w GO111MODULE=auto
+
 ## Go Module Create
 > `mkdir encdec && cd encdec` \
 > `go mod init mateors.com/encdec` \
