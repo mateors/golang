@@ -18,7 +18,7 @@ Golang Learning resources
 > write your source code & save the file
 
 ## Go Module, Call your code from anothe module
-```
+```go
 import (
      ...
     "mateors.com/encdec"
