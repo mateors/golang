@@ -13,8 +13,8 @@ Golang Learning resources
 > go mod tidy -go=1.17
 
 ## Go Module Create
-> mkdir encdec && cd encdec
-> go mod init mateors.com/encdec
+> `mkdir encdec && cd encdec` \
+> `go mod init mateors.com/encdec` \
 > write your source code & save the file
 
 ## Go Module, Call your code from anothe module
