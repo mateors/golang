@@ -1,6 +1,14 @@
 # golang
 Golang Learning resources
 
+## Data type detection
+dataFields interface{}
+> dtype := reflect.TypeOf(dataFields).Kind().String()
+
+var c Company
+> fmt.Println(reflect.ValueOf(&c).Kind().String()) //ptr \
+> fmt.Println(reflect.ValueOf([]string{"aid", "cid", "type"}).Kind().String()) //slice
+
 ## Linux terminal build for windows
 > `Syntax: env GOOS=target-OS GOARCH=target-architecture go build package-import-path`\
 > $ env GOOS=windows go build
