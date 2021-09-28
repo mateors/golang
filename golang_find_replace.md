@@ -35,4 +35,5 @@ func main() {
 
 
 ## Reference
-[Stackoverflow](https://stackoverflow.com/questions/26152901/replace-a-line-in-text-file-golang)
+* [Stackoverflow](https://stackoverflow.com/questions/26152901/replace-a-line-in-text-file-golang)
+* [Another example code](https://gist.github.com/tdegrunt/045f6b3377f3f7ffa408)
