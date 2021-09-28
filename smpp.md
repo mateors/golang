@@ -54,3 +54,18 @@ for the remaining PDU data.
 
 
 Bind Operation = MC login request 
+
+## SMPP Client Simulation
+* https://melroselabs.com/tools/smppclient/
+* 
+
+## Reference
+* [SMPP Version 5 Docs](https://smpp.org/SMPP_v5.pdf)
+* [SMPP Version 3.4 Docs](https://smpp.org/SMPP_v3_4_Issue1_2.pdf)
+* [SMS Forum](https://smsforum.net)
+* [Other Provider Features](https://melroselabs.com/docs/reference/smpp/smpp-v5)
+* [Third Party Docs](http://www.smscentral.com.au/wp-content/uploads/SMS-Central-SMPP-Implementation-Guide-March-2017.pdf)
+* [RICH Messaging](https://melroselabs.com/services/rich-messaging/)
+* [DTLS](https://github.com/pion/dtls)
+* [STunnel](https://www.stunnel.org/vulns.html)
+* 
