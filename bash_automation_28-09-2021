@@ -1,0 +1,79 @@
+
+
+## Special File Permissions (setuid, setgid and Sticky Bit)
+
+find directory -user root -perm -4000 -exec ls -ldb {} \;
+
+find / -user root -perm -4000 -exec ls -ldb {} \;
+
+# Reference:
+* https://docs.oracle.com/cd/E19683-01/816-4883/secfile-69/index.html
+* https://docs.oracle.com/cd/E19683-01/816-4883/6mb2joatb/index.html
+
+Every bash script starts with this string: “!#/bin/bash.” The exclamation point and hash symbol is known in the UNIX world as a “she-bang” and is the foundation of pretty much any UNIX-based script.
+
+
+
+double ampersand (&&)? That tells the script to execute one command right after the other. 
+
+It also tells the script to stop if something goes wrong. If you used a single ampersand, the script would continue even if the first command failed.
+
+
+> sudo apt autoremove -y
+
+libfprint-2-tod1 libllvm10
+(Reading database ... 202619 files and directories currently installed.)
+
+
+## Create a Shell Script to Install NGINX from Source On Ubuntu
+https://aaronluna.dev/blog/install-nginx-source-code-shell-script/
+
+https://medium.com/@ayeshasilvia/how-to-automate-interactive-installation-on-linux-short-sweet-ac59b345f84f
+
+https://linuxhandbook.com/bash-automation/
+
+
+https://code.tutsplus.com/tutorials/the-fundamentals-of-bash-scripting--net-32093
+
+https://gist.github.com/sheikhwaqas/9088872
+
+Reading database ... 202608 files and directories currently installed
+
+sudo apt install silversearcher-ag
+
+dpkg --list | wc --lines
+
+find . -maxdepth 1 -type f | wc -l
+
+I was curious to know which command actually causes this counting? The attempts I have made so far are:
+https://askubuntu.com/questions/923425/aptitude-count-number-of-files-and-directories
+
+ls -1 | wc -l
+
+cat /var/lib/dpkg/info/*.list | sort | uniq | wc -l
+202662
+
+strings $(which dpkg) | grep "currently installed"
+
+dpkg --listfiles hello
+
+https://devconnected.com/how-to-count-files-in-directory-on-linux/
+
+
+## How To Find Largest Top 10 Files and Directories On Linux / UNIX / BSD
+https://www.cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/
+
+du -a /var | sort -n -r | head -n 10
+
+sudo du /var/ -h --max-depth=999
+
+Now, every command run in bash shell returns a value that’s stored in the bash variable “$?”. To get the value, run this command.
+
+
+echo $?
+If a command succeeded successfully, the return value will be 0. If the return value is otherwise, then it didn’t run as it’s supposed to
+
+
+## single ampersand between 2 expressions
+This is the bitwise AND operator.
+
