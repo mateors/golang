@@ -1,0 +1,194 @@
+To avoid race conditions 
+
+https://www.developer.com/languages/understanding-structs-in-go/
+
+https://stackoverflow.com/questions/52533312/what-is-the-best-way-to-hide-struct-fields-and-yet-make-it-synchronise-access-an
+
+ git config --list
+ 
+ /home/mostain/Downloads
+ 
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf  /home/mostain/Downloads/go1.17.1.linux-amd64.tar.gz
+
+sudo tar -C /usr/local -xzf  /home/mostain/Downloads/go1.17.1.linux-amd64.tar.gz
+
+git config --global user.email
+
+git merge --ff-only main
+
+
+--allow-unrelated-histories
+
+git merge origin/main --allow-unrelated-histories
+
+
+could not import github.com/mateors/mfile (
+
+cannot find package "github.com/mateors/mfile" in any of 
+
+	/usr/local/go/src/github.com/mateors/mfile (from $GOROOT)
+	/home/mostain/go/src/github.com/mateors/mfile 
+	
+	(from 
+	
+	/usr/local/go
+	
+	/home/mostain/go/src/github.com/mateors/mfile 
+	/home/mostain/go/src/github.com/mateors/mfile
+	
+	/home/mostain/go/src/mastrhost/main.go
+	
+https://www.portaone.com/	
+As per our Conversation, we have created new account which only for access you!
+Please find only Billing  login info not after login check SMPP credential ,
+
+SMS Portal   : https://smpp.irak.com.bd
+User         : msbillah
+Password     : msbillah
+SMS IP       : 72.21.25.134 / or smpp.irak.com.bd
+	        72.21.25.134
+	        
+	        35.207.253.140
+
+SMPP Port     : 12220 
+HTTP Port     : 12250 Server: Jetty(9.4.25.v20191220)
+HTTPS Port    : 12260 Connection refused
+
+apiKey: a7dbb731492375d9
+SecretKey: 68a43d25
+
+http://192.168.18.119:8585/sendtext?apikey=a7dbb731492375d9&secretkey=68a43d25&callerI
+D=8801847&toUser=8801768760886&messageContent=Master-Academy
+
+
+http://192.168.18.119:8585/sendtext?apikey=5d2a&secretkey=465&callerI
+D=8801847&toUser=452621&messageContent=abcd&hash=asdfsadds
+
+https://smpp.org/#smppoverview
+https://smpp.org/SMPP_v3_4_Issue1_2.pdf
+
+
+The Short Message Peer to Peer (SMPP) protocol is an open, industry standard protocol
+designed to provide a flexible data communications interface for transfer of short message data
+between a Message Center, such as a Short Message Service Centre (SMSC), GSM
+Unstructured Supplementary Services Data (USSD) Server or other type of Message Center
+and a SMS application system, such as a WAP Proxy Server, EMail Gateway or other
+
+Messaging Gateway.
+Note: For sake of brevity, the term SMSC will be used throughout this document to describe
+any SMPP ‘server’ entity to which an SMPP ‘client’, termed an External Short
+Message Entity (ESME), can be connected
+
+
+Using the SMPP protocol, an SMS application system called the ‘External Short Message
+Entity’ (ESME) may initiate an application layer connection with an SMSC over a TCP/IP or
+X.25 network connection and may then send short messages and receive short messages to and
+from the SMSC respectively. The ESME may also query, cancel or replace short messages
+using SMPP.
+
+
+
+
+SMPP supports a full featured set of two-way messaging functions such as:-
+• Transmit messages from an ESME to single or multiple destinations via the SMSC
+• An ESME may receive messages via the SMSC from other SME’s (e.g. mobile
+stations).
+• Query the status of a short message stored on the SMSC
+• Cancel or replace a short message stored on the SMSC
+• Send a registered short message (for which a ‘delivery receipt’ will be returned by the
+SMSC to the message originator)
+• Schedule the message delivery date and time
+• Select the message mode, i.e. datagram or store and forward
+• Set the delivery priority of the short message
+• Define the data coding type of the short message
+• Set the short message validity period
+• Associate a service type with each message e.g. voice mail notification
+
+
+This document defines Version 3.4 of the SMPP protocol and specifies the command and
+response format to be used when implementing an SMPP v3.4 protocol interface. 
+
+
+
+The SMPP protocol defines:
+• a set of operations for the exchange of short messages between an ESME and an SMSC
+• the data that an ESME application must exchange with an SMSC during SMPP operations. 
+
+
+
+
+SMPP is based on the exchange of request and response protocol data units (PDUs) between
+the ESME and the SMSC over an underlying TCP/IP or X.25 network connection. The SMPP
+protocol defines:
+
+• a set of operations and associated Protocol Data Units (PDUs) for the exchange of short
+messages between an ESME and an SMSC
+• the data that an ESME application can exchange with an SMSC during SMPP operations.
+
+
+
+Every SMPP operation must consist of a request PDU and associated response PDU.
+The receiving entity must return the associated SMPP response to an SMPP PDU
+request.
+
+
+The only exception to this rule is
+- the alert_notification PDU for which there is no response
+
+
+opaque value:
+this means a value which reveals no details other then the type of the value itself.
+
+
+https://pkg.go.dev/golang.org/x/exp/shiny/screen
+
+https://memorylapse.ca/post/pixel-monitor/
+
+
+https://github.com/faiface/pixel/
+
+https://github.com/go-gl/glfw/
+
+This write up explores how to access video device drivers using the Video for Linux API (or V4L2) and the Go standard libraries, with no Cgo, to build realtime video capture and streaming programs.
+
+ video capture
+ 
+ devName := "/dev/video0"
+ 
+ https://github.com/marethyu/gotube/blob/master/gotube.go
+ 
+ https://www.youtube.com/get_video_info?&video_id=
+ https://www.youtube.com/get_video_info?&video_id=
+ 
+ https://github.com/hybridgroup/mjpeg/blob/master/stream.go
+ 
+ https://stackoverflow.com/questions/63535380/how-to-stream-video-capture-to-web
+ 
+ https://nametbd.slugsy.me/record-video-using-golang-and-your-webcam-without-opencv-cgo-minggw-692d1126315f
+ 
+ https://github.com/vee2xx/camtron/blob/master/webcam.go
+ 
+ https://github.com/faiface/pixel/
+ 
+ https://medium.com/learning-the-go-programming-language/realtime-video-capture-with-go-65a8ac3a57da
+ 
+ https://github.com/vladimirvivien/go4vl/blob/main/v4l2/device.go
+ 
+ https://memorylapse.ca/post/pixel-monitor/
+ 
+ https://memorylapse.ca/post/pixel-monitor/
+ 
+ https://smpp.org/SMPP_v3_4_Issue1_2.pdf
+ 
+ https://github.com/CodeMonkeyKevin/smpp34
+ 
+ https://github.com/linxGnu/gosmpp
+ 
+ https://github.com/linxGnu/gosmpp/blob/master/example/main.go
+ 
+ https://melroselabs.com/services/smsc-simulator/
+ 
+ Server:	smscsim.melroselabs.com
+Port:	2775 (non-TLS), 8775 (TLS)
+System ID:	340485
+Password:	f9d2f3 (valid 10-days)
