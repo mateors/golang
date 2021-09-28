@@ -52,8 +52,7 @@ for the remaining PDU data.
 * Anciliary Submission 
 * Anciliary Broadcast. 
 
-
-Bind Operation = MC login request 
+> Bind Operation = MC login request 
 
 ## SMPP Client Simulation
 * https://melroselabs.com/tools/smppclient/
@@ -68,4 +67,3 @@ Bind Operation = MC login request
 * [RICH Messaging](https://melroselabs.com/services/rich-messaging/)
 * [DTLS](https://github.com/pion/dtls)
 * [STunnel](https://www.stunnel.org/vulns.html)
-* 
