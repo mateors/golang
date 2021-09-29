@@ -37,6 +37,9 @@ func main(){
 ## Memory allocation debug
 > GODEBUG=gctrace=1 go run .
 
+## Max processor set
+> GOMAXPROCS=3 go run .
+
 ## Reference
 * [Intrdoduction Blog](https://about.sourcegraph.com/go/an-introduction-to-go-tool-trace-rhys-hiltner)
 * [Presentation Slide](https://speakerdeck.com/rhysh/an-introduction-to-go-tool-trace?slide=9)
