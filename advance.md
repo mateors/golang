@@ -6,7 +6,7 @@
 * Bitwise operator | Left shift | right shift
 * Goroutine
 * Channel
-* Race condition | Race tracer
+* Race condition | [Race tracer](https://pkg.go.dev/runtime/trace#Start)
 * Context
 
 > go doc & go tool usage details
