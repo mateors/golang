@@ -18,3 +18,4 @@
 * [Bitshifting Basic video](https://www.youtube.com/watch?v=qq64FrA2UXQ)
 * https://github.com/yangchenxing/go-map2struct
 * https://github.com/yangchenxing/go-singleflight
+* [Map to Struct](https://github.com/mateors/go-map2struct)
