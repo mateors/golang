@@ -8,7 +8,7 @@ Go makes it easy to use concurrency with goroutines, which means we do more conc
 ## How to generate trace.out file?
 > copy and paste the following code into your main function
 ```golang
-
+func main(){
 	//go tool trace
 	f, err := os.Create("trace.out")
 	if err != nil {
@@ -24,6 +24,8 @@ Go makes it easy to use concurrency with goroutines, which means we do more conc
 	//------------------------
   
   //your prgram source code goes here
+  
+  }
   
   ```
 ## run your go program using 
