@@ -51,7 +51,9 @@ func main() {
 }
 ```
 
+## Reference
 * https://stackoverflow.com/questions/18017979/golang-pointer-to-function-from-string-functions-name
+* https://mikespook.com/2012/07/function-call-by-name-in-golang/
 
 ## Resource
 * [Bitshifting Basic video](https://www.youtube.com/watch?v=qq64FrA2UXQ)
