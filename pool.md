@@ -42,3 +42,41 @@ func Put(cr *MyModel) {
 }
 
 ```
+
+## Implementation
+```golang
+
+//import "sync/atomic"
+//import "encoding/json"
+//import "time"
+//import "net/http"
+
+type Data struct {
+	numReqs uint64
+	name    string
+	value     log.Logger
+}
+
+func (d *Data) Add(){
+
+ //Any business login implementation
+ // Your code
+}
+
+func (d *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+
+	atomic.AddUint64(&d.numReqs, 1)
+
+	go func(){
+		
+		dec := json.NewDecoder(r.Body)
+		defer r.Body.Close()
+
+		myModel := cp.Get()
+		dec.Decode(myModel)
+		// INFO - pretent we do some work on with the msg
+		time.Sleep(10 * time.Millisecond)
+		co.Put(myModel)
+	}()
+	
+}
