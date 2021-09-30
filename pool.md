@@ -9,12 +9,12 @@ type MyModel struct{
   Age int
 }
 
-const CR_POOL_SIZE = 10000
+const POOL_SIZE = 1000
 
 var pool chan *MyModel
 
 func init() {
-	pool = make(chan *MyModel, CR_POOL_SIZE)
+	pool = make(chan *MyModel, POOL_SIZE)
 }
 
 func Alloc() *MyModel {
