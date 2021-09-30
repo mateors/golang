@@ -9,8 +9,10 @@ type MyModel struct{
   Age int
 }
 
+//you may increase accodring to your project need
 const POOL_SIZE = 1000
 
+//Global pool variable | resource pool
 var pool chan *MyModel
 
 func init() {
