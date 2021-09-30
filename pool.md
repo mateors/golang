@@ -17,7 +17,9 @@ func init() {
 	pool = make(chan *MyModel, POOL_SIZE)
 }
 
-func Alloc() *MyModel {
+//Add/Allocate resource to the pool or pick from the existing pool
+// Get()
+func Get() *MyModel {
 	select {
 	case cr := <-pool:
 		return cr
@@ -27,7 +29,10 @@ func Alloc() *MyModel {
 	}
 }
 
-func Release(cr *MyModel) {
+//Release resource from the pool
+//Garbage Collector (GC) is relaxed now
+//Put() | put resource back
+func Put(cr *MyModel) {
 	select {
 	case pool <- cr:
 	default:
