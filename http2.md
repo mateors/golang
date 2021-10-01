@@ -47,3 +47,4 @@ func handle(w http.ResponseWriter, r *http.Request) {
 
 ## Resource
 * https://posener.github.io/http2
+* https://github.com/posener/h2conn
