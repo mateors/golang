@@ -16,5 +16,34 @@ The command will generate two files: server.key and server.crt
 * server.key: Contains our server private key
 * server.crt: The server certificate - represents the server’s identity and contains the server’s public key
 
+Now, for the server code, in its simplest form, we will just use Go’s standard library HTTP server and enable TLS with the generated SSL files.
+```golang
+package main
+
+import (
+	"log"
+	"net/http"
+)
+
+func main() {
+	// Create a server on port 8000
+	// Exactly how you would run an HTTP/1.1 server
+	srv := &http.Server{Addr: ":8000", Handler: http.HandlerFunc(handle)}
+
+	// Start the server with TLS, since we are running HTTP/2 it must be
+	// run with TLS.
+	// Exactly how you would run an HTTP/1.1 server with TLS connection.
+	log.Printf("Serving on https://0.0.0.0:8000")
+	log.Fatal(srv.ListenAndServeTLS("server.crt", "server.key"))
+}
+
+func handle(w http.ResponseWriter, r *http.Request) {
+	// Log the request protocol
+	log.Printf("Got connection: %s", r.Proto)
+	// Send a message back to the client
+	w.Write([]byte("Hello"))
+}
+```
+
 ## Resource
 * https://posener.github.io/http2
