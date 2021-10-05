@@ -1,5 +1,6 @@
 # golang
 Golang Learning resources
+> Software engineering is a craft that should be honed, debated, and continuously improved.
 
 ## Data type detection
 dataFields interface{}
