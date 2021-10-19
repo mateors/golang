@@ -22,7 +22,22 @@
 > file name \
 
 ## Compile & Install together ($GOPATH/bin)
-> go install
+> go install \
+> $GOPATH/bin/name
+
+## Downloading, Compiling & Installing into $GOPATH/bin
+> go get github.com/mateors/reponame \
+> go get -u https://github.com/golang/example/hello
+
+## List all of your packages (dependencies)
+> go list \
+> go list -f '{{ .Name }}' \
+> go list -f '{{ .Doc }}' \
+> go list -f '{{ .Imports }}' \
+> go list -f '{{ .Imports }}' strings \
+> go list -f '{{ join .Imports "\n" }}' strings \
+> go list -f '{{ join .Imports "\n" }}' strings \
+
 
 
 ## Reference
