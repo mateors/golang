@@ -38,6 +38,13 @@
 > go list -f '{{ join .Imports "\n" }}' strings \
 > go list -f '{{ join .Imports "\n" }}' strings \
 
+## Go Documentation
+> go doc strings \
+> go doc strings Compare \
+
+## Viewing documentation in the browser
+> go doc -http := 8080
+
 
 
 ## Reference
