@@ -3,6 +3,7 @@
 ## Topics to be covered
 * Unit Test
 * Go-wrk
+* Go-torch
 * Benchmark
 
 
