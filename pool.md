@@ -80,3 +80,13 @@ func (d *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}()
 	
 }
+```
+
+## Resource
+* [Go Concurrency Worker Pool Pattern like I’m five](https://itnext.io/explain-to-me-go-concurrency-worker-pool-pattern-like-im-five-e5f1be71e2b0)
+* [Golang package](https://github.com/mateors/pond)
+* [Worker pool video tutorial](https://www.youtube.com/watch?v=1iBj5qVyfQA)
+* [Implemention Resource Pool Part-1](https://www.youtube.com/watch?v=G33OlABzxW8)
+* [Part-2](https://www.youtube.com/watch?v=HNZTJZ7Buk0)
+* [Part-3](https://www.youtube.com/watch?v=h6ZwhM20_Yo)
+* [Resouce-pool code](https://github.com/striversity/gotr/tree/master/021-resouce-pool)
