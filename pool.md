@@ -96,3 +96,5 @@ func (d *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 * [Sqlite data generator](https://github.com/sqlitebrowser/sqlitedatagen)
 * [multithreading-to-read-large-files](https://hackernoon.com/leveraging-multithreading-to-read-large-files-faster-in-go-lmn32t7)
 * [Build a TCP Connection Pool From Scratch](https://betterprogramming.pub/build-a-tcp-connection-pool-from-scratch-with-go-d7747023fe14?gi=b3978a42d21d)
+* [Simple code](https://chowdera.com/2021/07/20210715165328495l.html)
+* [how-to-make-1-million-get-request](https://forum.golangbridge.org/t/how-to-make-1-million-get-request-with-golang-concurrency-in-low-end-windows-pc/16628)
