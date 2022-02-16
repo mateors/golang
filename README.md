@@ -2,6 +2,26 @@
 ## Golang Learning resources
 > Software engineering is a craft that should be honed, debated, and continuously improved.
 
+## Golang Installation or Upgradation
+> go version \
+> which go
+
+
+> wget https://go.dev/dl/go1.17.7.linux-amd64.tar.gz
+
+> sudo rm -rf /usr/local/go
+
+> sudo tar -xzf go1.17.7.linux-amd64.tar.gz
+
+> sudo mv go /usr/local
+
+> export PATH=$PATH:/usr/local/go/bin
+
+> source $HOME/.profile
+
+> go version
+
+
 ## Data type detection
 dataFields interface{}
 > dtype := reflect.TypeOf(dataFields).Kind().String()
