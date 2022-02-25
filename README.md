@@ -45,8 +45,8 @@ type Achead struct{
  Code string
 }
 
-fmt.Println(getType(Achead{}))
-fmt.Println(getType(&Achead{}))
+fmt.Println(structName(Achead{}))
+fmt.Println(structName(&Achead{})) //Achead
 ```
 
 ## Linux terminal build for windows
