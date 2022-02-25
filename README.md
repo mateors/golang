@@ -30,6 +30,25 @@ var c Company
 > fmt.Println(reflect.ValueOf(&c).Kind().String()) //ptr \
 > fmt.Println(reflect.ValueOf([]string{"aid", "cid", "type"}).Kind().String()) //slice
 
+## How to get the name of a struct?
+```go
+func structName(myvar interface{}) string {
+	if t := reflect.TypeOf(myvar); t.Kind() == reflect.Ptr {
+		return t.Elem().Name()
+	} else {
+		return t.Name()
+	}
+}
+
+type Achead struct{
+ ID int
+ Code string
+}
+
+fmt.Println(getType(Achead{}))
+fmt.Println(getType(&Achead{}))
+```
+
 ## Linux terminal build for windows
 > `Syntax: env GOOS=target-OS GOARCH=target-architecture go build package-import-path`\
 > $ env GOOS=windows go build
