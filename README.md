@@ -63,6 +63,8 @@ fmt.Println(structName(&Achead{})) //Achead
 ## Module on by default
 > go env -w GO111MODULE=auto
 
+> fmt.Println("NumGoroutine:", runtime.NumGoroutine())
+
 ## Go Module Create
 > `mkdir encdec && cd encdec` \
 > `go mod init mateors.com/encdec` \
