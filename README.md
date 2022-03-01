@@ -63,7 +63,8 @@ fmt.Println(structName(&Achead{})) //Achead
 ## Module on by default
 > go env -w GO111MODULE=auto
 
-> fmt.Println("NumGoroutine:", runtime.NumGoroutine())
+> fmt.Println("NumGoroutine:", runtime.NumGoroutine()) \
+> GODEBUG=gctrace=1 ./chaldal
 
 ## Go Module Create
 > `mkdir encdec && cd encdec` \
