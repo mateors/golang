@@ -14,14 +14,9 @@ func colid(num int) string {
 	rem := num % 26 //remainder
 	fld := num / 26 //floor-division
 	if rem == 0 {
+		rem = 26
 		if fld == 1 {
-			if rem == 0 {
-				rem = 26
-			}
 			return fmt.Sprintf(`%c`, alphabets[rem-1])
-		}
-		if rem == 0 {
-			rem = 26
 		}
 		return fmt.Sprintf(`%s%c`, colid(fld-1), alphabets[rem-1])
 	}
