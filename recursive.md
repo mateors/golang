@@ -1,5 +1,5 @@
 ## Recursive function
-Best real world recurive function example
+Best real world recurive function example \
 Find Excel column name from a given column number.
 
 ```go
