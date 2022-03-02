@@ -5,8 +5,6 @@ Best real world recurive function example
 func colid(num int) string {
 
 	var alphabets string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	// val := fmt.Sprintf(`%c`, alphabets[num-1])
-	// fmt.Println(val)
 	if num <= 0 {
 		return ""
 	}
@@ -30,9 +28,9 @@ func colid(num int) string {
 	return fmt.Sprintf(`%s%c`, colid(fld), alphabets[rem-1])
 }
 ```
-usage:
-fmt.Println(colid(1)) //A
-fmt.Println(colid(26)) //Z
-fmt.Println(colid(27)) //AA
-fmt.Println(colid(52)) //AZ
-fmt.Println(colid(705)) //AAC
+### usage:
+> fmt.Println(colid(1)) //A \
+> fmt.Println(colid(26)) //Z \
+> fmt.Println(colid(27)) //AA \
+> fmt.Println(colid(52)) //AZ \
+> fmt.Println(colid(705)) //AAC
