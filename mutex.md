@@ -13,3 +13,6 @@ Mutex is short for mutual exclusion. Mutexes keep track of which thread has acce
 * [Mutex Fundamentals](https://www.sohamkamani.com/golang/mutex)
 * [rwMutex](https://dev.to/qvault/golang-mutexes-what-is-rwmutex-for-57a0)
 * [Read-Write Code Analysis](https://www.mo4tech.com/golang-series-rwmutex-read-write-lock-analysis.html)
+* [sync.Mutex Video Explanation](https://www.youtube.com/watch?v=JlmYLPxwVzQ)
+* [Mutex vs Synchronization](https://www.youtube.com/watch?v=jkRN9zcLH1s) 
+* [Semaphore and Mutex](https://www.youtube.com/watch?v=DvF3AsTglUU)
