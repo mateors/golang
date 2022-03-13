@@ -12,7 +12,6 @@ If you wait some time and not allocate memory again, freed memory will be return
 * [FreeOSMemory](https://pkg.go.dev/runtime/debug#FreeOSMemory) forces a garbage collection followed by an attempt to return as much memory to the operating system as possible.
 * Keep in mind that it won't do anything unless the GC has been run
 * The amount of memory released shown by runtime.ReadMemStats
-* https://stackoverflow.com/questions/37382600/cannot-free-memory-once-occupied-by-bytes-buffer
  
 ## Topics
 * Interface
@@ -74,3 +73,4 @@ func main() {
 * https://github.com/yangchenxing/go-map2struct
 * https://github.com/yangchenxing/go-singleflight
 * [Map to Struct](https://github.com/mateors/go-map2struct)
+* [free-memory-once-occupied](https://stackoverflow.com/questions/37382600/cannot-free-memory-once-occupied-by-bytes-buffer)
