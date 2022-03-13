@@ -1,5 +1,10 @@
 # Advance Golang
 
+## FreeOSMemory
+* FreeOSMemory forces a garbage collection followed by an attempt to return as much memory to the operating system as possible.
+* Keep in mind that it won't do anything unless the GC has been run
+* The amount of memory released shown by runtime.ReadMemStats
+ 
 ## Topics
 * Interface
 * Pointer
