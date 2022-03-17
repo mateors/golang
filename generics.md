@@ -17,6 +17,16 @@ func splitAnySlice[T any](s []T) ([]T, []T) {
     return s[:mid], s[mid:]
 }
 
+func main() {
+    firstInts, secondInts := splitAnySlice([]int{0, 1, 2, 3})
+    fmt.Println(firstInts, secondInts)
+    // prints [0 1] [2 3]
+
+    firstStrings, secondStrings := splitAnySlice([]string{"zero", "one", "two", "three"})
+    fmt.Println(firstStrings, secondStrings)
+    // prints [zero one] [two three]
+}
+
 ```
 ## Builtin constraints
 * any
