@@ -49,7 +49,7 @@ fmt.Println(a)
 
 type superInt int64
 var b superInt=7
-a:=nextNumber(b)
+a:=nextNumber(b) //if you remove tilde sign from the function defination it wouldn't work.
 fmt.Println(a)
 ```
 
