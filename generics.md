@@ -15,7 +15,7 @@ Generics will finally give Go developers an elegant way to write amazing utility
 * Type Inference
 * Type Set
 
-### Type Parameter with cnstrain
+### 1. Type Parameter with cnstrain
 func myFunc[T any](a T) T {
     return a
 } 
@@ -28,7 +28,7 @@ func myFunc[T interface{}](a T) T {
 a:=myFunc[T int](10)
 fmt.Println(a)
 
-### Type Inference
+### 2. Type Inference
 Inference is using observation and background to reach a logical conclusion. You probably practice inference every day. For example, if you see someone eating a new food and he or she makes a face, then you infer he does not like it. Or if someone slams a door, you can infer that she is upset about something.
 
 Inference: the process of inferring something. -> deduce or conclude -> remove type when calling a function
@@ -40,7 +40,7 @@ fmt.Println(a)
 
 //any value with int64 or underlying type int64 are allowed
 //with the special symbol called tilde  ~
-func nextNumber[T ~int64](a T) T {
+func nextNumber[T ~int64|float64](a T) T {
     return a+1
 }
 
@@ -53,6 +53,27 @@ type superInt int64
 var b superInt=7
 a:=nextNumber(b) //if you remove tilde sign from the function defination it wouldn't work.
 fmt.Println(a)
+```
+
+### 3. Type Set (Declare a type constraint| Custom type)
+
+```
+type myType interface{
+ ~float64 | int64 //Declare a union of int64 and float64 inside the interface.
+}
+
+func nextNumber[T myType](a T) T {
+    return a+1
+}
+
+a:=nextNumber(7) 
+fmt.Println(a)
+
+type superInt float64
+var b superInt=7
+a:=nextNumber(7) 
+fmt.Println(a)
+
 ```
 
 ```go
