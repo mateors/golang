@@ -38,6 +38,8 @@ Inference: the process of inferring something. -> deduce or conclude -> remove t
 a:=myFunc(10)
 fmt.Println(a)
 
+//any value with int64 or underlying type int64 are allowed
+//with the special symbol called tilde  ~
 func nextNumber[T ~int64](a T) T {
     return a+1
 }
