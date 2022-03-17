@@ -16,17 +16,19 @@ Generics will finally give Go developers an elegant way to write amazing utility
 * Type Set
 
 ### 1. Type Parameter with cnstrain
-func myFunc[T any](a T) T {
+```func myFunc[T any](a T) T {
     return a
 } 
 
 func myFunc[T interface{}](a T) T {
     return a
 }
-
+```
 > Calling above function
-a:=myFunc[T int](10)
-fmt.Println(a)
+
+> a:=myFunc[T int](10)
+
+> fmt.Println(a)
 
 ### 2. Type Inference
 Inference is using observation and background to reach a logical conclusion. You probably practice inference every day. For example, if you see someone eating a new food and he or she makes a face, then you infer he does not like it. Or if someone slams a door, you can infer that she is upset about something.
