@@ -78,6 +78,9 @@ fmt.Println(a)
 
 You are only allowed to make your custom constraint using the following types. [why?](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#operations-based-on-type-sets)
 
+* Ordered is a type constraint that matches any ordered type.
+* An ordered type is one that supports the <, <=, >, and >= operators.
+
 * ~int | ~int8 | ~int16 | ~int32 | ~int64 |
 * ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
 * ~float32 | ~float64 |
@@ -131,10 +134,14 @@ func main() {
 }
 
 ```
-## Builtin constraints
+
+## Builtin Constraints
 * any
 * comparable
 * Parametric constraints or Custom constraints
+
+### Comparable constraint
+The comparable constraint is a predefined constraint as well, just like the any constraint. When using the comparable constraint instead of the any constraint, you can use the != and == operators within your function logic.
 
 ## Generics Golang Playground
 * https://gotipplay.golang.org/
