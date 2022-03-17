@@ -34,9 +34,24 @@ Inference is using observation and background to reach a logical conclusion. You
 Inference: the process of inferring something. -> deduce or conclude -> remove type when calling a function
 
 > Calling differently according to the inference theory.
+```go
 a:=myFunc(10)
 fmt.Println(a)
 
+func nextNumber[T ~int64](a T) T {
+    return a+1
+}
+
+**Hints:** notice a tilde sign before int64
+
+a:=nextNumber(5)
+fmt.Println(a)
+
+type superInt int64
+var b superInt=7
+a:=nextNumber(b)
+fmt.Println(a)
+```
 
 ```go
 
