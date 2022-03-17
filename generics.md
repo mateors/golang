@@ -10,6 +10,34 @@ You should care about generics because they mean you don’t have to write as mu
 
 Generics will finally give Go developers an elegant way to write amazing utility packages.
 
+## Generics 3 main features
+* Type Parameter with cnstraint
+* Type Inference
+* Type Set
+
+### Type Parameter with cnstrain
+func myFunc[T any](a T) T {
+    return a
+} 
+
+func myFunc[T interface{}](a T) T {
+    return a
+}
+
+> Calling above function
+a:=myFunc[T int](10)
+fmt.Println(a)
+
+### Type Inference
+Inference is using observation and background to reach a logical conclusion. You probably practice inference every day. For example, if you see someone eating a new food and he or she makes a face, then you infer he does not like it. Or if someone slams a door, you can infer that she is upset about something.
+
+Inference: the process of inferring something. -> deduce or conclude -> remove type when calling a function
+
+> Calling differently according to the inference theory.
+a:=myFunc(10)
+fmt.Println(a)
+
+
 ```go
 
 func splitAnySlice[T any](s []T) ([]T, []T) {
