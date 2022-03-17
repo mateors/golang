@@ -18,10 +18,19 @@ func splitAnySlice[T any](s []T) ([]T, []T) {
 }
 
 ```
+## Builtin constraints
+* any
+* comparable
+* Parametric constraints or Custom constraints
+
+## Generics Golang Playground
+* https://gotipplay.golang.org/
+
 
 ## Why Generics?
 * https://go.dev/blog/why-generics
 * https://go.dev/blog/survey2020-results
+* https://qvault.io/golang/how-to-use-golangs-generics
  
 ## Resource
 * https://go.dev/doc/tutorial/generics
