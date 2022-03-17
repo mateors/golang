@@ -16,7 +16,9 @@ Generics will finally give Go developers an elegant way to write amazing utility
 * Type Set
 
 ### 1. Type Parameter with cnstrain
-```func myFunc[T any](a T) T {
+```go
+
+func myFunc[T any](a T) T {
     return a
 } 
 
@@ -59,7 +61,8 @@ fmt.Println(a)
 
 ### 3. Type Set (Declare a type constraint| Custom type)
 
-```
+```go
+
 type myType interface{
  ~float64 | int64 //Declare a union of int64 and float64 inside the interface.
 }
