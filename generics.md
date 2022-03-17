@@ -76,6 +76,43 @@ fmt.Println(a)
 
 ```
 
+You are only allowed to make your custom constraint using the following types. [why?](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#operations-based-on-type-sets)
+
+* ~int | ~int8 | ~int16 | ~int32 | ~int64 |
+* ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+* ~float32 | ~float64 |
+* ~string
+
+### Generic Types vs Generic Function
+So we know that we can write functions that use generic types, but what if we want to create a custom type that can contain generic types? For example, a slice of order-able objects. The new proposal makes this possible.
+
+```go
+type comparableSlice[T comparable] []T
+
+func allEqual[T comparable](s comparableSlice[T]) bool {
+    if len(s) == 0 {
+        return true
+    }
+    last := s[0]
+    for _, cur := range s[1:] {
+        if cur != last {
+            return false
+        }
+        last = cur
+    }
+    return true 
+}
+
+func main() {
+    fmt.Println(allEqual([]int{4,6,2}))
+    // false
+
+    fmt.Println(allEqual([]int{1,1,1}))
+    // true
+}
+```
+
+
 ```go
 
 func splitAnySlice[T any](s []T) ([]T, []T) {
