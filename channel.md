@@ -1,3 +1,4 @@
+# Golang goroutine communication using channel
 
 ```go
 package main
@@ -68,6 +69,8 @@ func receive(cstr <-chan string) {
 
 }
 ```
+
+## Advance Channel without sync Package
 
 ```go
 package main
