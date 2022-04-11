@@ -69,3 +69,61 @@ func receive(cstr <-chan string) {
 }
 ```
 
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main(){
+
+rows := []map[string]interface{}{
+		{"name": "Mostain", "age": 38},
+		{"name": "Moaz", "age": 25},
+		{"name": "Nahid", "age": 26},
+		{"name": "Anonnya", "age": 27},
+		{"name": "Tareq", "age": 29},
+		{"name": "Eshita", "age": 27},
+		{"name": "Riyaz", "age": 21},
+		{"name": "Pallabi", "age": 21},
+		{"name": "Zubair", "age": 22},
+		{"name": "Sumi", "age": 30},
+	}
+	c1 := make(chan []map[string]interface{}, 5)
+
+	se := calcMaster(10, 2)
+	for _, val := range se {
+		go rowProcessor(c1, val, rows)
+
+	}
+
+	//time.Sleep(time.Millisecond * 100)
+	var nmap = make([]map[string]interface{}, 0)
+	for range se {
+		vals := <-c1
+		for _, row := range vals {
+			nmap = append(nmap, row)
+		}
+		fmt.Println("receiver:", len(vals))
+	}
+
+	close(c1)
+	fmt.Println("Done!", len(nmap))
+}
+	
+//sender
+func rowProcessor(c chan<- []map[string]interface{}, sval *startEnd, rows []map[string]interface{}) {
+
+	fmt.Println("sender:", sval.Start, sval.End)
+	//time.Sleep(time.Millisecond * 5000)
+	c <- rows[sval.Start:sval.End]
+}
+
+type startEnd struct {
+	Start int
+	End   int
+}
+```
+
