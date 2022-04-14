@@ -29,5 +29,6 @@ func intGenerator() genType {
 ```
 
 ## Resource
+* [Lazy evaluation](https://deepu.tech/functional-programming-in-go/)
 * [Go-Pipelines Lazy vs Eager](https://medium.com/@j.d.livni/understanding-go-pipelines-in-5-minutes-2906a5c41496)
 * [lazy-evaluation-in-go](https://blog.merovius.de/posts/2015-07-17-lazy-evaluation-in-go/)
