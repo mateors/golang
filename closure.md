@@ -10,9 +10,9 @@ import "fmt"
 func main() {
 
 	igen := intGenerator()
-	fmt.Println(">>", igen())
-	fmt.Println(">>", igen())
-	fmt.Println(">>", igen())
+	fmt.Println(">>", igen()) //2
+	fmt.Println(">>", igen()) //4
+	fmt.Println(">>", igen()) //6
 	//igen = nil
 
 }
