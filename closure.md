@@ -5,6 +5,8 @@ In computer science, a closure is a function that has an environment of its own.
 ## Higher-order function
 In mathematics and computer science, a higher-order function is a function that does at least one of the following: takes one or more functions as arguments, returns a function as its result. All other functions are first-order functions. In mathematics higher-order functions are also termed operators or functionals.
 
+A Higher-Order function is a function that receives a function as an argument or returns the function as output. Higher order functions are functions that operate on other functions, either by taking them as arguments or by returning them.
+
 ```go
 package main
 
@@ -35,3 +37,4 @@ func intGenerator() genType {
 * [Lazy evaluation](https://deepu.tech/functional-programming-in-go/)
 * [Go-Pipelines Lazy vs Eager](https://medium.com/@j.d.livni/understanding-go-pipelines-in-5-minutes-2906a5c41496)
 * [lazy-evaluation-in-go](https://blog.merovius.de/posts/2015-07-17-lazy-evaluation-in-go/)
+* [Futures in GO](https://appliedgo.net/futures/#:~:text=Futures%20in%20a%20nutshell,for%20Go's%20built%2Din%20concurrency.)
