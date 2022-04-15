@@ -70,3 +70,4 @@ func main() {
 * [lazy-evaluation-in-go](https://blog.merovius.de/posts/2015-07-17-lazy-evaluation-in-go/)
 * [Futures in GO](https://appliedgo.net/futures/#:~:text=Futures%20in%20a%20nutshell,for%20Go's%20built%2Din%20concurrency.)
 * [Functional-Programming](https://deepu.tech/functional-programming-in-go/)
+* [Easy-functional-programming-techniques](https://dev.to/deepu105/7-easy-functional-programming-techniques-in-go-3idp)
