@@ -101,6 +101,47 @@ go func() { c <- f() }() // async
 value := <-c             // await
 ```
 
+## Singleton Pattern in Go or sync.Once
+Just Call Your Code Only Once
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+type DbConnection struct{}
+
+var (
+	dbConnOnce sync.Once
+	conn       *DbConnection
+)
+
+func GetConnection() *DbConnection {
+	dbConnOnce.Do(func() {
+		conn = &DbConnection{}
+		fmt.Println("Inside")
+	})
+	fmt.Println("Outside")
+	return conn
+}
+
+func main() {
+	for i := 0; i < 5; i++ {
+		_ = GetConnection()
+	}
+}
+//outputs
+Inside
+Outside
+Outside
+Outside
+Outside
+Outside
+```
+
 
 ## Resource
 * [Lazy evaluation](https://deepu.tech/functional-programming-in-go/)
