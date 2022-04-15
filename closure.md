@@ -64,6 +64,31 @@ func main() {
 }
 ```
 
+## Lazy loading implementation using higher order functions
+```go
+package main
+
+import "fmt"
+
+func Double(x int) int {
+	return x * x
+}
+
+func Double2(x, y int) int {
+	return x * y
+}
+
+//func(x int) int, x int) int
+func ClosureFunc(a func(x, y int) int, x, y int) int {
+	return a(x, y)
+}
+
+func main() {
+	//fmt.Println(">>", ClosureFunc(Double, 5))
+	fmt.Println(">>", ClosureFunc(Double2, 5, 6))  
+}
+```
+
 ## Resource
 * [Lazy evaluation](https://deepu.tech/functional-programming-in-go/)
 * [Go-Pipelines Lazy vs Eager](https://medium.com/@j.d.livni/understanding-go-pipelines-in-5-minutes-2906a5c41496)
