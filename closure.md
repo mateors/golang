@@ -70,15 +70,17 @@ package main
 
 import "fmt"
 
+//   a func(x int) int
 func Double(x int) int {
 	return x * x
 }
 
+//    a func(x, y int) int
 func Double2(x, y int) int {
 	return x * y
 }
 
-//func(x int) int, x int) int
+//      Double2 == func(x int) int, x int) int
 func ClosureFunc(a func(x, y int) int, x, y int) int {
 	return a(x, y)
 }
