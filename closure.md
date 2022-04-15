@@ -109,3 +109,4 @@ value := <-c             // await
 * [Futures in GO](https://appliedgo.net/futures/#:~:text=Futures%20in%20a%20nutshell,for%20Go's%20built%2Din%20concurrency.)
 * [Functional-Programming](https://deepu.tech/functional-programming-in-go/)
 * [Easy-functional-programming-techniques](https://dev.to/deepu105/7-easy-functional-programming-techniques-in-go-3idp)
+* [Thread-safe-lazy-loading](https://www.fareez.info/blog/thread-safe-lazy-loading-using-sync-once-in-go/)
