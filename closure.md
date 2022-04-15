@@ -64,7 +64,7 @@ func main() {
 }
 ```
 
-## Lazy loading implementation using higher order functions
+## [Lazy loading implementation using higher order functions](https://go.dev/play/p/Ty8vpd52TaI)
 ```go
 package main
 
