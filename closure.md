@@ -32,6 +32,9 @@ func intGenerator() genType {
 	}
 }
 ```
+## Lazy Evaluation
+Lazy evaluation or non-strict evaluation is the process of delaying evaluation of an expression until it is needed. In general, Go does strict/eager evaluation but for operands like && and || it does a lazy evaluation. We can utilize higher-order-functions, closures, goroutines, and channels to emulate lazy evaluations.
+
 ## Lazy loading using sync.Once
 
 ```go
@@ -90,6 +93,14 @@ func main() {
 	fmt.Println(">>", ClosureFunc(Double2, 5, 6))  
 }
 ```
+## Futures in Go
+Futures are mechanisms for decoupling a value from how it was computed. Goroutines and channels allow implementing futures trivially. 
+```go
+c := make(chan int)      // future
+go func() { c <- f() }() // async
+value := <-c             // await
+```
+
 
 ## Resource
 * [Lazy evaluation](https://deepu.tech/functional-programming-in-go/)
