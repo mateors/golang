@@ -21,3 +21,10 @@ fmt.Printf("%d\n", 0b01110000) //112
 fmt.Printf("%d\n", 0b11100000) //224
   ```
   
+## Right Shifting
+
+```go
+fmt.Println(x, x>>1) //3  0b00000011
+fmt.Println(x, x>>2) //1  0b00000001
+fmt.Println(x, x>>3) //0  0b00000000
+ ```
