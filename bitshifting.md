@@ -28,3 +28,6 @@ fmt.Println(x, x>>1) //3  0b00000011
 fmt.Println(x, x>>2) //1  0b00000001
 fmt.Println(x, x>>3) //0  0b00000000
  ```
+
+## Resource
+* [Golang IOTA & Bitwise Bit Shifting](https://www.youtube.com/watch?v=FHEyulwEEdE)
