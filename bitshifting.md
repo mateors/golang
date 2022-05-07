@@ -1,4 +1,15 @@
 # Bit Shifting in Golang
+The Go programming language supports several bitwise operators including the followings:
+
+```
+ &   bitwise AND
+ |   bitwise OR
+ ^   bitwise XOR
+&^   AND NOT
+<<   left shift
+>>   right shift
+```
+
 
 ## Left Shifting
 
