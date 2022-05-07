@@ -67,7 +67,7 @@ func subtract(a, b int64) int64 {
 		// xor - sum bits where one is not set
 		a = a ^ b
 
-		// shift carry by 1
+		// shift borrow by 1
 		b = borrow << 1
 	}
 	return a
