@@ -1,6 +1,6 @@
 # How to provide the virtual hosts functionality using golang
 
-```golang
+```go
 
 package main
 
