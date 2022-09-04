@@ -12,6 +12,63 @@ by doing this make it extreamly modular.
 6. Message Queue
 7. REST | GraphQL
 
+## Decoupling
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type reader interface {
+	read() (int, error)
+}
+
+type file struct {
+	name        string
+	fileContent string
+}
+
+func (f *file) read() (int, error) 
+	content := "file contents"
+	f.fileContent = content
+	return len(content), nil
+}
+
+type pipe struct {
+	name        string
+	pipeMessage string
+}
+
+func (p *pipe) read() (int, error) {
+	msg := `{name: "Henry", title: "developer"}`
+	p.pipeMessage = msg
+	return len(msg), nil
+}
+
+func main() {
+	f := file{
+		name: "data.json",
+	}
+	p := pipe{
+		name: "pipe_message",
+	}
+
+	retrieve(&f)
+	fmt.Println(f.fileContent)
+	retrieve(&p)
+	fmt.Println(p.pipeMessage)
+}
+
+func retrieve(r reader) error {
+	len, _ := r.read()
+	fmt.Println(fmt.Sprintf("read %d bytes", len))
+	return nil
+}
+```
+
+
 ### Package used in this project
 * github.com/teris-io/shortid
 * github.com/vmihailenco/msgpack
