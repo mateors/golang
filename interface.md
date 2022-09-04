@@ -79,3 +79,4 @@ func retrieve(r reader) error {
 * [Hexagonal Microservices with Go](https://www.youtube.com/watch?v=rQnTtQZGpg8)
 * [MessagePack](https://msgpack.org/index.html)
 * [Golang Tensor Programming](https://www.youtube.com/watch?v=QyBXz9SpPqE&list=PLJbE2Yu2zumCe9cO3SIyragJ8pLmVv0z9)
+* [understand-go-golang-interfaces](https://duncanleung.com/understand-go-golang-interfaces)
