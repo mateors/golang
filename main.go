@@ -6,6 +6,9 @@ import (
 	"time"
 	"urlshortener/shortener"
 
+	"urlshortener/api"
+	"urlshortener/serializer/json"
+
 	"github.com/mateors/mcb"
 )
 
@@ -68,11 +71,22 @@ func main() {
 
 	//Step-2
 	//service := shortener.NewRedirectService(nrepo)
+	aa := &api.Handler{}
+
+	
+	
 
 	var red = &shortener.Redirect{}
 	red.Code = "abcd"
 	red.URL = "http://mateors.com"
 	red.CreateTime = time.Now().Unix()
+
+	bs, err := aa.Serializer("").Encode(red)
+	fmt.Println(string(bs), err)
+
+	ss := &json.Redirect{}
+	bs, err = ss.Encode(red)
+	fmt.Println(string(bs), err)
 
 	//Step - 3
 	//err = nrepo.Store(red)

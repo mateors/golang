@@ -20,9 +20,18 @@ by doing this make it extreamly modular.
 ### How do I change main branch to a new branch
 > `git branch -m master interface`
 
+> `git push -d origin interface`
+
+Inheritence can be coped with by using interface and composition
+
+* Composition -> using type embedding
+* Inheritance -> can be achived using interface
+
 
 ## Resource
 
+* [Interface-pattern-in-golang](https://medium.com/swlh/what-is-the-extension-interface-pattern-in-golang-ce852dcecaec)
+* [Type Embedding](https://go101.org/article/type-embedding.html)
 * [Interface](https://www.youtube.com/watch?v=qJKQZKGZgf0)
 * [Hexagonal Microservices with Go](https://www.youtube.com/watch?v=rQnTtQZGpg8)
 * [MessagePack](https://msgpack.org/index.html)

@@ -37,7 +37,7 @@ func (r *redirectService) Store(redirect *Redirect) error {
 }
 
 // test only
-func (r *redirectService) Test(redirect *Redirect) error {
+func (r *redirectService) Test() error {
 
-	return r.redirectRepo.Store(redirect)
+	return nil
 }
