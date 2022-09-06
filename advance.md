@@ -41,7 +41,7 @@ func periodicFree(d time.Duration) {
 * The amount of memory released shown by runtime.ReadMemStats
  
 ## Topics
-* Interface
+* [Interface](https://github.com/mateors/golang/tree/interface)
 * Pointer
 * Singleflight | Mutex | Sync
 * Bitwise operator | Left shift | right shift
