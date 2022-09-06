@@ -28,6 +28,11 @@ Inheritence can be coped with by using interface and composition
 * Inheritance -> can be achived using interface
 
 
+## How to fix 'fatal: refusing to merge unrelated histories' Git erro 
+
+> `git pull origin master --allow-unrelated-histories`
+
+
 ## Resource
 
 * [Interface-pattern-in-golang](https://medium.com/swlh/what-is-the-extension-interface-pattern-in-golang-ce852dcecaec)
