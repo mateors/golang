@@ -86,3 +86,6 @@ import (
 * https://go.dev/blog/go116-module-changes
 * https://maelvls.dev/go111module-everywhere/
 * https://hasura.io/graphql/database/
+* https://nats.io/
+* https://github.com/hasura/graphql-engine
+* https://hasura.io/graphql/database/
