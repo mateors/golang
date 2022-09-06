@@ -33,6 +33,20 @@ Inheritence can be coped with by using interface and composition
 > `git pull origin master --allow-unrelated-histories`
 
 
+## Project Directory Explanation
+currently there are four directory in the project 
+
+1. api -> api package  code
+2. database -> database implementation code
+3. serializer -> data converter json|msgpack code
+4. shortener -> main project code file further explanation given below.
+    1. model.go -> project main model (think like database table)
+    2. service.go -> interface for the actual service (features of the project, currently only store and find)
+    3. repository.go -> interface for project database feature/functionality (store and find)
+    4. serializer.go -> interface for data converter feature/functions/ behaviour
+    5. logic.go -> Business logic for the project. (whichever database we use in our project they need to implement this logic)
+
+
 ## Resource
 
 * [Interface-pattern-in-golang](https://medium.com/swlh/what-is-the-extension-interface-pattern-in-golang-ce852dcecaec)

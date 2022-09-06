@@ -23,7 +23,13 @@ func NewRedirectService(redirectRepo RedirectRepository) RedirectService {
 
 func (r *redirectService) Find(code string) (*Redirect, error) {
 
-	fmt.Println("logic.Find()")
+	defer func() {
+		if rec := recover(); rec != nil {
+			fmt.Println("logic panicking >>", rec)
+		}
+	}()
+
+	//fmt.Println("logic.Find()")
 	return r.redirectRepo.Find(code)
 }
 
@@ -34,10 +40,4 @@ func (r *redirectService) Store(redirect *Redirect) error {
 	//redirect.CreateTime = time.Now().Unix()
 	fmt.Println("logic.Store()")
 	return r.redirectRepo.Store(redirect)
-}
-
-// test only
-func (r *redirectService) Test() error {
-
-	return nil
 }
