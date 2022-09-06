@@ -85,3 +85,4 @@ import (
 * https://golang.org/doc/tutorial/call-module-code
 * https://go.dev/blog/go116-module-changes
 * https://maelvls.dev/go111module-everywhere/
+* https://hasura.io/graphql/database/
