@@ -48,7 +48,7 @@ currently there are four directory in the project
 
 
 ## Resource
-
+*  Dependency Inversion Principle
 * [Interface-pattern-in-golang](https://medium.com/swlh/what-is-the-extension-interface-pattern-in-golang-ce852dcecaec)
 * [Type Embedding](https://go101.org/article/type-embedding.html)
 * [Interface](https://www.youtube.com/watch?v=qJKQZKGZgf0)
@@ -56,3 +56,4 @@ currently there are four directory in the project
 * [MessagePack](https://msgpack.org/index.html)
 * [Golang Tensor Programming](https://www.youtube.com/watch?v=QyBXz9SpPqE&list=PLJbE2Yu2zumCe9cO3SIyragJ8pLmVv0z9)
 * [Part-3](https://github.com/tensor-programming/hex-microservice/tree/part-3)
+* [Practical-solid-in-golang](https://levelup.gitconnected.com/practical-solid-in-golang-dependency-inversion-principle-8cbd4eed484b)
