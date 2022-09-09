@@ -90,6 +90,54 @@ func main() {
 
 }
 ```
+## Struct to Fields (Embedded type included)
+
+```go
+
+func StructToFields(anyStruct interface{}) map[string]map[string]interface{} {
+
+	stype := reflect.TypeOf(anyStruct)
+	sf := structFields(stype)
+	return structFieldMap(sf)
+}
+
+func structFieldMap(sf []reflect.StructField) map[string]map[string]interface{} {
+
+	rmap := make(map[string]map[string]interface{})
+	for i, field := range sf {
+		valm := make(map[string]interface{})
+		valm["name"] = field.Name
+		valm["rtype"] = field.Type.String() //reflect.Type
+		valm["tag"] = field.Tag.Get(tagGetName)
+		valm["isexported"] = field.IsExported()
+		valm["position"] = i
+		//valm["anonymous"] = field.Anonymous //if embedded type then true
+		rmap[field.Name] = valm
+	}
+	return rmap
+}
+
+func structFields(stype reflect.Type) []reflect.StructField {
+
+	sf := make([]reflect.StructField, 0)
+	if stype.Kind() == reflect.Pointer {
+		stype = stype.Elem()
+	}
+	if stype.Kind() == reflect.Struct {
+		for i := 0; i < stype.NumField(); i++ {
+			f := stype.Field(i)
+			if f.Anonymous {
+				rtype := f.Type
+				rs := structFields(rtype)
+				sf = append(sf, rs...)
+			} else {
+				sf = append(sf, f)
+			}
+		}
+	}
+	return sf
+}
+```
 
 ## Reference
 * https://stackoverflow.com/questions/18017979/golang-pointer-to-function-from-string-functions-name
