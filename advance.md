@@ -139,6 +139,35 @@ func structFields(stype reflect.Type) []reflect.StructField {
 }
 ```
 
+## Usage example
+```go
+type People struct{
+    Name string `json:"name"`
+    Dob string `json:"dob"`
+    Height float64 `json:"height"`
+}
+
+type Employee struct{
+    People
+    Salary float64
+    Status int
+}
+
+//struct
+emp := Employee{}
+rmap := StructToFields(emp)
+for key, val := range rmap {
+    fmt.Println(key, val)
+}
+
+//pointer to struct
+emp2 := &Employee{}
+rmap = StructToFields(emp2)
+for key, val := range rmap {
+    fmt.Println(key, val)
+}
+```
+
 ## Reference
 * https://stackoverflow.com/questions/18017979/golang-pointer-to-function-from-string-functions-name
 * https://mikespook.com/2012/07/function-call-by-name-in-golang/
