@@ -168,7 +168,7 @@ for key, val := range rmap {
 }
 ```
 
-## Form filler
+## Form filler | Form + StructReference = StructPropertyWithValue
 ```go
 func structFiller(form url.Values, anyStructToPointer interface{}) error {
 
@@ -238,7 +238,7 @@ func valueSet(vField reflect.Value, fvalue interface{}) {
 }
 ```
 
-## Form setter usage example
+## Form filler usage example
 
 ```go
 
@@ -268,7 +268,7 @@ form.Set("adult", "1")
 form.Set("hobby", "quran,reading,swimming")
 
 var emp Employee
-err := structFiller(form, &emp)
+err := structFiller(form, &emp) //form + pointer to struct | struct reference
 fmt.Println(err)
 
 ```
