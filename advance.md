@@ -236,6 +236,14 @@ func valueSet(vField reflect.Value, fvalue interface{}) {
 		vField.Set(strValue)
 	}
 }
+
+func structFieldValue(field reflect.StructField, tagField string) string {
+	var fieldValue string = field.Tag.Get(tagField)
+	if fieldValue == "" {
+		fieldValue = strings.ToLower(field.Name)
+	}
+	return fieldValue
+}
 ```
 
 ## Form filler usage example
