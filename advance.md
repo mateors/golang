@@ -168,6 +168,67 @@ for key, val := range rmap {
 }
 ```
 
+## Form filler
+```go
+func structFiller(form url.Values, anyStructToPointer interface{}) {
+
+	//empv reflect.Value, empt reflect.Type
+	empv := reflect.ValueOf(anyStructToPointer) //must be a pointer
+	empt := reflect.TypeOf(anyStructToPointer)  //
+
+	//fmt.Println(empv.Kind() == reflect.Pointer) //if empv.Kind()=="ptr"
+	if empv.Kind() != reflect.Pointer {
+		fmt.Println("must be pointer")
+		return
+	}
+
+	//fmt.Println("empv.CanSet()->", empv.CanSet())
+	//fmt.Println("empv.Elem().CanSet()->", empv.Elem().CanSet())
+	//fmt.Println("empv.Elem().NumField()->", empv.Elem().NumField())
+
+	for i := 0; i < empv.Elem().NumField(); i++ {
+
+		var vField reflect.Value
+		var sField reflect.StructField
+
+		//fmt.Println(">>", empv.Elem().Field(i))
+		//fmt.Println(empt.Kind())
+		vField = empv.Elem().Field(i)
+
+		if empt.Kind() == reflect.Struct {
+			sField = empt.Field(i)
+		}
+
+		if empt.Kind() == reflect.Pointer {
+			sField = empt.Elem().Field(i) //?
+		}
+
+		fieldValue := structFieldValue(sField, "json")
+		fvalue := form.Get(fieldValue)
+		valSet(vField, fvalue) //
+
+		if sField.Anonymous {
+
+			for j := 0; j < vField.NumField(); j++ {
+
+				ssField := sField.Type.Field(j)
+				fieldValue := structFieldValue(ssField, "json")
+				fvalue := form.Get(fieldValue)
+				valSet(vField.Field(j), fvalue)
+				//fmt.Println(">>>", ssField.Name, fieldValue, fvalue)
+			}
+
+			// vField.Field(0).SetString("Arisha")
+			// vField.Field(1).SetInt(6)
+			// vField.Field(2).SetString("female")
+		}
+
+	}
+
+}
+```
+
+
 ## Reference
 * https://stackoverflow.com/questions/18017979/golang-pointer-to-function-from-string-functions-name
 * https://mikespook.com/2012/07/function-call-by-name-in-golang/
