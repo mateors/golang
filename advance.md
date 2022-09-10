@@ -195,18 +195,46 @@ func structFiller(form url.Values, anyStructToPointer interface{}) error {
 
 		fieldValue := structFieldValue(sField, "json")
 		fvalue := form.Get(fieldValue)
-		valSet(vField, fvalue) //
+		valueSet(vField, fvalue) //
 
 		if sField.Anonymous {
 			for j := 0; j < vField.NumField(); j++ {
 				ssField := sField.Type.Field(j)
 				fieldValue := structFieldValue(ssField, "json")
 				fvalue := form.Get(fieldValue)
-				valSet(vField.Field(j), fvalue)
+				valueSet(vField.Field(j), fvalue)
 			}
 		}
 	}
 	return nil
+}
+
+func valueSet(vField reflect.Value, fvalue interface{}) {
+
+	if vField.Kind() == reflect.String {
+		vField.SetString(fmt.Sprint(fvalue))
+
+	} else if vField.Kind() == reflect.Int64 {
+		fvalueInt, _ := strconv.ParseInt(fmt.Sprint(fvalue), 10, 64)
+		vField.SetInt(fvalueInt)
+
+	} else if vField.Kind() == reflect.Int {
+		fvalueInt, _ := strconv.ParseInt(fmt.Sprint(fvalue), 10, 64)
+		vField.SetInt(fvalueInt)
+
+	} else if vField.Kind() == reflect.Float64 {
+		fvalueInt, _ := strconv.ParseFloat(fmt.Sprint(fvalue), 64)
+		vField.SetFloat(fvalueInt)
+
+	} else if vField.Kind() == reflect.Bool {
+		boolVal, _ := strconv.ParseBool(fmt.Sprint(fvalue))
+		vField.SetBool(boolVal)
+
+	} else if vField.Kind() == reflect.Slice {
+		vslc := strings.Split(fmt.Sprint(fvalue), ",")
+		var strValue reflect.Value = reflect.ValueOf(vslc)
+		vField.Set(strValue)
+	}
 }
 ```
 
