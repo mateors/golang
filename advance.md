@@ -238,6 +238,41 @@ func valueSet(vField reflect.Value, fvalue interface{}) {
 }
 ```
 
+## Form setter usage example
+
+```go
+
+type BasicInfo struct {
+	Name   string `json:"name"`
+	Age    int64
+	Gender string
+}
+
+type Employee struct {
+	BasicInfo
+	Designation string
+	Salary      float64
+	Adult       bool
+	Hobby       []string
+	Status      int
+}
+
+form := make(url.Values)
+form.Set("name", "Wania")
+form.Set("age", "2")
+form.Set("gender", "female")
+form.Set("designation", "Engineer")
+form.Set("salary", "5000.50")
+form.Set("status", "1")
+form.Set("adult", "1")
+form.Set("hobby", "quran,reading,swimming")
+
+var emp Employee
+err := structFiller(form, &emp)
+fmt.Println(err)
+
+```
+
 
 ## Reference
 * https://stackoverflow.com/questions/18017979/golang-pointer-to-function-from-string-functions-name
