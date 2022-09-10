@@ -197,7 +197,7 @@ func structFiller(form url.Values, anyStructToPointer interface{}) error {
 		fvalue := form.Get(fieldValue)
 		valueSet(vField, fvalue) //
 
-		if sField.Anonymous {
+		if sField.Type.Kind() == reflect.Struct {
 			for j := 0; j < vField.NumField(); j++ {
 				ssField := sField.Type.Field(j)
 				fieldValue := structFieldValue(ssField, "json")
