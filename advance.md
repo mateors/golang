@@ -292,3 +292,4 @@ fmt.Println(err)
 * https://github.com/yangchenxing/go-singleflight
 * [Map to Struct](https://github.com/mateors/go-map2struct)
 * [free-memory-once-occupied](https://stackoverflow.com/questions/37382600/cannot-free-memory-once-occupied-by-bytes-buffer)
+* [Full-text-search-engine](https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine)
