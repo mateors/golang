@@ -71,6 +71,9 @@ fmt.Println(structName(&Achead{})) //Achead
 > `go mod init mateors.com/encdec` \
 > write your source code & save the file
 
+### This command deletes the cache downloaded along with unpacked code dependencies
+> go clean -modcache
+
 ## Go Module, Call your code from anothe module
 ```go
 import (
