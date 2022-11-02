@@ -56,6 +56,9 @@ func main() {
 
 A race condition in Go occurs when two or more goroutines have shared data and interact with it simultaneously. 
 
+Run the following code to see the output
+> go run --race main.go
+
 ```go
 
 package main
