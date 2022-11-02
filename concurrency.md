@@ -36,7 +36,7 @@ You can fix the above problem in two ways
 
 ### Way-02, using the buffered channel
 ```go
-	c1 := make(chan string,1)
+	c1 := make(chan string,1) //making a buffered channel by giving a capacity
   	c1<- "Mostain" //sending
   
 	v := <-c1 //receiving
