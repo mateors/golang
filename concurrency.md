@@ -107,7 +107,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
 func fib(n int) int {
