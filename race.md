@@ -52,3 +52,36 @@ func main() {
 }
 
 ```
+
+```go
+
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+
+	wg := sync.WaitGroup{}
+	var result []float64
+
+	wg.Add(1)
+	go func() {
+		fmt.Println("worker 1")
+		result = append(result, 50.50)
+		wg.Done()
+	}()
+
+	wg.Add(1)
+	go func() {
+		fmt.Println("worker 2")
+		result = append(result, 78.50)
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println(result)
+}
+```
