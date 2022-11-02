@@ -22,7 +22,7 @@ func main() {
 
 You can fix the above problem in two ways
 
-### Way 01, wrap the sending code in a separate goroutine
+### Way-01, wrap the sending code in a separate goroutine
 ```go
 	go func() {
 		c1 <- "mostain"
@@ -32,6 +32,15 @@ You can fix the above problem in two ways
 	fmt.Println(v)
 ```
 
+### Way-02, using the buffered channel
+```go
+	c1 := make(chan string,1)
+  	c1<- "Mostain" //sending
+  
+	v := <-c1 //receiving
+	fmt.Println(v)
+	
+```
 
 ## Resource
 * [Get-a-taste-of-concurrency](https://levelup.gitconnected.com/get-a-taste-of-concurrency-in-go-625e4301810f)
