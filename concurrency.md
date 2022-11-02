@@ -100,6 +100,63 @@ func main() {
 }
 ```
 
+## Worker pool
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func fib(n int) int {
+
+	if n <= 1 {
+		return n
+	}
+	return fib(n-1) + fib(n-2)
+}
+
+func worker(jobs <-chan int, result chan<- int) {
+
+	for n := range jobs {
+		result <- fib(n)
+	}
+}
+
+func main() {
+
+	jobs := make(chan int, 100)
+	results := make(chan int, 100)
+
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+	go worker(jobs, results)
+
+	for i := 0; i < 100; i++ {
+		jobs <- i
+	}
+	close(jobs)
+
+	for i := 0; i < 100; i++ {
+		res := <-results
+		fmt.Println(res)
+	}
+
+}
+```
+
+
 ## Resource
 * [Get-a-taste-of-concurrency](https://levelup.gitconnected.com/get-a-taste-of-concurrency-in-go-625e4301810f)
 * [Multihreading-and-multiprocessing](https://www.mineiros.io/blog/guide-to-multihreading-and-multiprocessing)
