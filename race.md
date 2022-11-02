@@ -91,3 +91,34 @@ func main() {
 	fmt.Println(result)
 }
 ```
+
+## Overcome race condition using sync.Mutex Package
+The sync.Mutex package provides a mechanism to guard a block of code, making it concurrency-safe, meaning write operations within that block will be safe.
+
+```go
+	wg := &sync.WaitGroup{}
+	mut := &sync.Mutex{}
+	var result []float64
+
+	wg.Add(1)
+	go func() {
+		mut.Lock()
+		fmt.Println("worker 1")
+		result = append(result, 50.50)
+		mut.Unlock()
+		wg.Done()
+	}()
+
+	wg.Add(1)
+	go func() {
+		mut.Lock()
+		fmt.Println("worker 2")
+		result = append(result, 78.50)
+		mut.Unlock()
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println(result)
+```
+
