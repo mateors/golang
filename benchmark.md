@@ -9,3 +9,9 @@ func BenchmarkRandInt(b *testing.B) {
     }
 }
 ```
+
+> go test -run=TestFib -v
+
+> go test -run=xxx -v -bench=.
+
+> go test -run=xxx -v -bench=. -benchtime=3s
