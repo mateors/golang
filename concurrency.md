@@ -43,6 +43,62 @@ You can fix the above problem in two ways
 	fmt.Println(v)
 	
 ```
+### Channel select
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+
+	c1 := make(chan string)
+	c2 := make(chan string)
+
+	go func() {
+		for i := 0; i < 3; i++ {
+			c1 <- "worker1 every 500 ms"
+			time.Sleep(time.Millisecond * 500)
+		}
+	}()
+
+	go func() {
+
+		for i := 0; i < 3; i++ {
+			c2 <- "worker2 every 1.5 seconds"
+			time.Sleep(time.Millisecond * 1500)
+		}
+
+	}()
+
+	var counter int
+	for {
+
+		//fmt.Println(<-c1)
+		//fmt.Println(<-c2)
+
+		select {
+		case msg1 := <-c1:
+			fmt.Println(msg1)
+
+		case msg2 := <-c2:
+			fmt.Println(msg2)
+			counter++
+		default:
+			fmt.Println("none of them are ready to send")
+			time.Sleep(time.Millisecond * 100)
+		}
+
+		//fmt.Println("counter:", counter)
+		if counter == 3 {
+			break
+		}
+	}
+
+}
+```
 
 ## Resource
 * [Get-a-taste-of-concurrency](https://levelup.gitconnected.com/get-a-taste-of-concurrency-in-go-625e4301810f)
