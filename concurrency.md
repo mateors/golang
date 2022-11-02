@@ -12,6 +12,8 @@ func main() {
 	c1 := make(chan string)
   	c1<- "Mostain" //sending
   
+  	//code blocks here until something is ready to receive
+	
 	v := <-c1 //receiving
 	fmt.Println(v)
 
