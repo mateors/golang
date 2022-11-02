@@ -10,7 +10,7 @@ import (
 func main() {
 
 	c1 := make(chan string)
-  c1<- "Mostain" //sending
+  	c1<- "Mostain" //sending
   
 	v := <-c1 //receiving
 	fmt.Println(v)
@@ -20,6 +20,17 @@ func main() {
 * The above won't run because of deadlock
 * Because of both are in the same goroutine
 
+You can fix the above problem in two ways
+
+### Way 01, wrap the sending code in a separate goroutine
+```go
+	go func() {
+		c1 <- "mostain"
+	}()
+
+	v := <-c1
+	fmt.Println(v)
+```
 
 
 ## Resource
