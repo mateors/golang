@@ -103,6 +103,10 @@ func semaphoreExample() {
 }
 ```
 
+> GODEBUG=gctrace=1 go run main.go
+
+> time go run --race main.go
+
 ### When using a semaphore how do you figure out the value of N for how many threads to limit?
 Unfortunately there is no hard and fast rule and the final number of N is going to depend on many factors. A good place to start is by benchmarking and actually hitting your shared resource to see where it starts to fall over in terms of performance and latency.
 
