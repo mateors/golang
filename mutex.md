@@ -54,6 +54,54 @@ The point is that in this scenario you are purposefully constraining access to a
 
 > **semaphore**: constrains access to at most N threads, to control/limit concurrent access to a shared resource
 
+```go
+
+type Post struct {
+	UserID int64  `json:"userId"`
+	ID     int64  `json:"id"`
+	Title  string `json:"title"`
+	Body   string `json:"body"`
+}
+
+func semaphoreExample() {
+
+	var p Post
+	wg := &sync.WaitGroup{}
+	wg.Add(100)
+
+	sem := make(chan bool, 10) //
+
+	for i := 1; i <= 100; i++ {
+
+		fmt.Println(runtime.NumGoroutine())
+		sem <- true //block here until channel free
+
+		go func(i int) {
+
+			defer wg.Done()
+			defer func() { <-sem }()
+
+			res, err := http.Get(fmt.Sprintf("https://jsonplaceholder.typicode.com/posts/%d", i))
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			err = json.NewDecoder(res.Body).Decode(&p)
+			if err != nil {
+				//return err
+				log.Fatal(err)
+			}
+
+			fmt.Println(p.ID, p.Title)
+
+		}(i)
+
+	}
+
+	wg.Wait()
+}
+```
+
 ### When using a semaphore how do you figure out the value of N for how many threads to limit?
 Unfortunately there is no hard and fast rule and the final number of N is going to depend on many factors. A good place to start is by benchmarking and actually hitting your shared resource to see where it starts to fall over in terms of performance and latency.
 
