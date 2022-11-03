@@ -9,6 +9,26 @@ Mutex is short for mutual exclusion. Mutexes keep track of which thread has acce
 * Read only mode: multi process can be read but not written
 * Write only mode: single co process can be written but not readable
 
+
+## Semaphore
+The semaphore is the concept that allows In-N-Out to receive 4 orders in a restaurent concurrently (actually in parallel), causing everyone else to sit and wait.
+
+### Let's compare a mutex to a sempahore
+* If a mutex is concerned with ensuring a single thread ever accesses code exclusively 
+* a semaphore is concerned with ensuring at most N threads can ever access code exclusively.
+
+> a semaphore is a more generalized version of a mutex 
+
+### What's the point of giving exclusive access to N threads? 
+The point is that in this scenario you are purposefully constraining access to a resource therefore protecting that resource from overuse.
+
+> **mutex**: constrains access to a 1 single thread, to guard a critical section of code.
+
+> **semaphore**: constrains access to at most N threads, to control/limit concurrent access to a shared resource
+
+### When using a semaphore how do you figure out the value of N for how many threads to limit?
+Unfortunately there is no hard and fast rule and the final number of N is going to depend on many factors. A good place to start is by benchmarking and actually hitting your shared resource to see where it starts to fall over in terms of performance and latency.
+
 ## Resource
 * [Mutex Fundamentals](https://www.sohamkamani.com/golang/mutex)
 * [rwMutex](https://dev.to/qvault/golang-mutexes-what-is-rwmutex-for-57a0)
