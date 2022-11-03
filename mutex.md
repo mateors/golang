@@ -36,3 +36,4 @@ Unfortunately there is no hard and fast rule and the final number of N is going 
 * [sync.Mutex Video Explanation](https://www.youtube.com/watch?v=JlmYLPxwVzQ)
 * [Mutex vs Synchronization](https://www.youtube.com/watch?v=jkRN9zcLH1s) 
 * [Semaphore and Mutex](https://www.youtube.com/watch?v=DvF3AsTglUU)
+* [concurrency-semaphores](https://medium.com/@deckarep/gos-extended-concurrency-semaphores-part-1-5eeabfa351ce)
