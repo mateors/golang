@@ -69,17 +69,18 @@ func semaphoreExample() {
 	wg := &sync.WaitGroup{}
 	wg.Add(100)
 
-	sem := make(chan bool, 10) //
+	//sem := make(chan bool, 10) 
+	sem := make(chan struct{}, 10) //
 
 	for i := 1; i <= 100; i++ {
 
 		fmt.Println(runtime.NumGoroutine())
-		sem <- true //block here until channel free
+		sem <- struct{}{} //block here until channel free //an array of empty structs, which occupies no storage.
 
 		go func(i int) {
 
 			defer wg.Done()
-			defer func() { <-sem }()
+			defer func() { <-sem }() 
 
 			res, err := http.Get(fmt.Sprintf("https://jsonplaceholder.typicode.com/posts/%d", i))
 			if err != nil {
