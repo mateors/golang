@@ -9,6 +9,34 @@ Mutex is short for mutual exclusion. Mutexes keep track of which thread has acce
 * Read only mode: multi process can be read but not written
 * Write only mode: single co process can be written but not readable
 
+```go
+	wg := &sync.WaitGroup{}
+	mut := &sync.Mutex{}
+  
+	var result []float64 //shared resource
+
+	wg.Add(1)
+	go func() {
+		mut.Lock()
+		fmt.Println("worker 1")
+		result = append(result, 50.50)
+		mut.Unlock()
+		wg.Done()
+	}()
+
+	wg.Add(1)
+	go func() {
+		mut.Lock()
+		fmt.Println("worker 2")
+		result = append(result, 78.50)
+		mut.Unlock()
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println(result)
+  ```
+  
 
 ## Semaphore
 The semaphore is the concept that allows In-N-Out to receive 4 orders in a restaurent concurrently (actually in parallel), causing everyone else to sit and wait.
