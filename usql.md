@@ -23,7 +23,7 @@ When building usql out-of-the-box with go build or go install, only the base dri
 
 > `usql --help`
 
-> `usql -J my://mostain:Mateors321@localhost/master_host`
+> `usql -J my://mostain:123ateorsM@localhost/master_host`
 
 > `usql --json my://mostain:Mateors321@localhost/master_host`
 
