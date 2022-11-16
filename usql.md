@@ -12,10 +12,10 @@ When building usql out-of-the-box with go build or go install, only the base dri
 *  \conninfo
 
 ## connect to a mysql database
-$ usql my://user:pass@host/dbname
-$ usql mysql://user:pass@host:port/dbname
-$ usql my://
-$ usql /var/run/mysqld/mysqld.sock
+* $ usql my://user:pass@host/dbname
+* $ usql mysql://user:pass@host:port/dbname
+* $ usql my://
+* $ usql /var/run/mysqld/mysqld.sock
 
 > `usql my://mostain:Mateors321@localhost/master_host`
 
