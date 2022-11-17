@@ -17,7 +17,7 @@ When building usql out-of-the-box with go build or go install, only the base dri
 * $ usql my://
 * $ usql /var/run/mysqld/mysqld.sock
 
-> `usql my://mostain:Mateors321@localhost/master_host`
+> `usql my://mostain:ateors32s1@localhost/master_host`
 
 > \echo Welcome `echo $USER` -- 'currently:' "(" `date` ")"
 
