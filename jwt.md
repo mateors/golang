@@ -61,3 +61,6 @@ func ValidateJWT(tokenString string) {
 
 }
 ```
+
+## Learning Resource
+* [Securing Your Go REST APIs with JSON Web Tokens](https://www.youtube.com/watch?v=-Scg9INymBs)
