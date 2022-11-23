@@ -94,6 +94,8 @@ func main() {
 
 ```go
 
+var tagGetName string = "json" //bson|msgpack
+
 func StructToFields(anyStruct interface{}) map[string]map[string]interface{} {
 
 	stype := reflect.TypeOf(anyStruct)
