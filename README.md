@@ -57,6 +57,11 @@ fmt.Println(structName(&Achead{})) //Achead
 > set GOOS=linux\
 > go build -o appName
 
+## Windows powershell build
+If you're using PowerShell, then changing values of environment variables should be done like: `$Env:<variable-name> = "<new-value>"`
+
+> $Env:GOOS = "linux"; $Env:GOARCH = "amd64"; go build -o hello
+
 ## Golang How to upgrade to Go 1.17 
 > go mod tidy -go=1.17
 
