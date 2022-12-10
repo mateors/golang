@@ -62,6 +62,16 @@ If you're using PowerShell, then changing values of environment variables should
 
 > $Env:GOOS = "linux"; $Env:GOARCH = "amd64"; go build -o hello
 
+### Cache clean command
+> go clean --cache
+
+### Testing command
+> $Env:GOOS="windows";go test .\utility\
+
+> $Env:GOOS="windows";go test -timeout 30s -run ^TestSsPLNT$ graphmysql/utility
+
+> $Env:GOOS="windows";go test ./...
+
 ## Golang How to upgrade to Go 1.17 
 > go mod tidy -go=1.17
 
