@@ -68,7 +68,7 @@ If you're using PowerShell, then changing values of environment variables should
 ### Testing command
 > $Env:GOOS="windows";go test .\utility\
 
-> $Env:GOOS="windows";go test -timeout 30s -run ^TestSsPLNT$ graphmysql/utility
+> `$Env:GOOS="windows";go test -timeout 30s -run ^TestSsPLNT$ graphmysql/utility`
 
 > $Env:GOOS="windows";go test ./...
 
