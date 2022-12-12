@@ -29,7 +29,7 @@ func handle(c *net.Conn) {
 }
 ```
 
-## Tcp Client
+## TCP Client
 ```go
 package main
 
@@ -61,5 +61,44 @@ func main() {
 		fmt.Println(c, "Received message:", n, string(buf))
 	}
 	fmt.Println(string(buf))
+}
+```
+## TCP Server | Publish to web
+```
+func tcpToweb() {
+
+	l, _ := net.Listen("tcp", "127.0.0.1:12345")
+	defer l.Close()
+
+	for {
+		// Wait for a connection.
+		conn, _ := l.Accept()
+
+		go func(c net.Conn) {
+			//for {
+
+			// msg, err := bufio.NewReader(conn).ReadString('\n')
+			// if err != nil {
+			// 	break
+			// }
+			// program := strings.Trim(msg, "\r\n")
+
+			cmd := exec.Command("top", "-bn1")
+			var b bytes.Buffer
+			cmd.Stdout = &b
+			cmd.Run()
+			//conn.Write(b.Bytes())
+			body := b.String()
+			fmt.Fprint(conn, "HTTP/1.1 200 OK\r\n")
+			fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body))
+			fmt.Fprint(conn, "Content-Type: text/html\r\n")
+			fmt.Fprint(conn, "\r\n")
+			fmt.Fprint(conn, body)
+
+			//}
+			//connection closed
+			c.Close()
+		}(conn)
+	}
 }
 ```
