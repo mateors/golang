@@ -64,7 +64,7 @@ func main() {
 }
 ```
 ## TCP Server | Publish to web
-```
+```go
 func tcpToweb() {
 
 	l, _ := net.Listen("tcp", "127.0.0.1:12345")
