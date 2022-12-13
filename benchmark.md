@@ -16,12 +16,12 @@ func BenchmarkRandInt(b *testing.B) {
 
 > go test -run=xxx -v -bench=. -benchtime=3s
 
-### With Memory test
+### Testing With Memory Allocation
 > go test -benchmem -run=^$ -bench ^BenchmarkSs* graphmysql/utility
 
 > go test -benchmem -bench ^BenchmarkSs* graphmysql/utility
 
-### No testing only benchmark checking
+### No testing only Benchmark with memory allocation
 > go test -run=^$ -benchmem -bench ^BenchmarkGetpass* graphmysql/utility
 
 ### Withour memory
