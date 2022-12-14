@@ -121,4 +121,5 @@ The sync.Mutex package provides a mechanism to guard a block of code, making it 
 	wg.Wait()
 	fmt.Println(result)
 ```
-
+### Windows PowerShell race test
+> `$Env:CGO_ENABLED=1;$Env:GOOS="windows"; go run --race .`
