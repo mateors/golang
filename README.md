@@ -65,6 +65,10 @@ If you're using PowerShell, then changing values of environment variables should
 ### Cache clean command
 > go clean --cache
 
+### Trouble-shooting
+Cleaning the go caches once fixed some “unknown import path”/“cannot find module providing package” errors
+> go clean -cache -modcache -i -r
+
 ### Testing command
 > $Env:GOOS="windows";go test .\utility\
 
@@ -107,3 +111,4 @@ import (
 * https://nats.io/
 * https://github.com/hasura/graphql-engine
 * https://hasura.io/graphql/database/
+* https://lecstor.com/go-cheatsheet
