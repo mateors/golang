@@ -51,3 +51,38 @@
 	fmt.Println(Details(p)) //[Name Age Height Gender]
 	
 ```
+
+## Map
+```go
+	row := make(map[string]interface{})
+	row["name"] = "Arisha"
+	row["age"] = 6
+	row["height"] = 4.2
+
+	trow := reflect.TypeOf(row)
+	fmt.Println("string:", trow.String())
+	fmt.Println("kind:", trow.Kind())
+	fmt.Println("keyType:", trow.Key())    //key type
+	fmt.Println("valueType:", trow.Elem()) //value type
+	//melm := trow.Elem()
+
+	fmt.Println("--------------------")
+
+	vrow := reflect.ValueOf(row)
+	fmt.Println("string:", vrow.String())
+	fmt.Println("type:", vrow.Type())
+	fmt.Println("kind:", vrow.Kind())
+	fmt.Println("keys:", vrow.MapKeys())
+
+
+	for key, val := range vrow.MapKeys() {
+		fmt.Println(">>", key, val)
+	}
+
+	iter := vrow.MapRange()
+	for iter.Next() {
+		k := iter.Key()
+		v := iter.Value()
+		fmt.Println(k, v)
+	}
+```
