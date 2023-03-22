@@ -21,3 +21,14 @@
 		fmt.Println(i, "->", reflect.ValueOf(stds).Index(i))
 	}
   ```
+
+## Func
+```go
+	greet := func(s, t, u string) string { return fmt.Sprintf("%s %s %s", s, t, u) }
+	frv := reflect.ValueOf(greet)
+	fmt.Println("string:", frv.String())
+	fmt.Println("kind:", frv.Kind())
+	fmt.Println("type:", frv.Type())
+	fmt.Println("parameter count:", frv.Type().NumIn())
+```
+	
