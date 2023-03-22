@@ -1,6 +1,16 @@
 # Reflect
 
-## Array value
+## String variable
+```go
+	name := "mostain"
+	rv := reflect.ValueOf(name)
+	fmt.Println("string:", rv.String())
+	fmt.Println("kind:", rv.Kind())
+	fmt.Println("type:", rv.Type())
+	fmt.Println("length:", rv.Len())
+```
+
+## Array variable
 ```go
 	stds := []string{"Istiyak", "Hasan", "Dipu"}
 	fmt.Println("kind:", reflect.ValueOf(stds).Kind()) //slice
