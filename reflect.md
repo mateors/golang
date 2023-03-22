@@ -32,3 +32,22 @@
 	fmt.Println("parameter count:", frv.Type().NumIn())
 ```
 	
+## Struct
+```go
+	func Details(inf interface{}) []string {
+
+		var fields []string
+		typof := reflect.TypeOf(inf)
+		count := typof.NumField()
+		for i := 0; i < count; i++ {
+			third := typof.Field(i).Name
+			fields = append(fields, third)
+		}
+		return fields
+	}
+
+	//call
+	var p Person
+	fmt.Println(Details(p)) //[Name Age Height Gender]
+	
+```
