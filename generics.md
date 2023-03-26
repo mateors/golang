@@ -43,25 +43,40 @@ Inference: the process of inferring something. -> deduce or conclude -> remove t
 
 > Calling differently according to the inference theory.
 ```go
+package main
 
-a:=myFunc(10)
-fmt.Println(a)
+import "fmt"
 
-//any value with int64 or underlying type int64 are allowed
-//with the special symbol called tilde  ~
-func nextNumber[T ~int64|float64](a T) T {
-    return a+1
+func myFunc[T any](a T) T {
+	return a
 }
 
-**Hints:** notice a tilde sign before int64
-
-a:=nextNumber(5)
-fmt.Println(a)
+// Any value with int64 or underlying type int64 are allowed
+// with the special symbol called tilde  ~
+// **Hints:** notice a tilde sign before int64
+func nextNumber[T ~int64 | float64](a T) T {
+	return a + 1
+}
 
 type superInt int64
-var b superInt=7
-a:=nextNumber(b) //if you remove tilde sign from the function defination it wouldn't work.
-fmt.Println(a)
+
+func main() {
+
+	a := myFunc[int](10) //calling with type
+	fmt.Println("myFunc:", a)
+
+	a = myFunc(10) //calling without type == type inference
+	fmt.Println("myFunc withoutType:", a)
+
+	b := nextNumber(5.0)
+	fmt.Println("nextNumber:", b)
+
+	var c superInt = 7 //superInt underlying type is int64
+	d := nextNumber(c) //if you remove tilde sign from the function defination it wouldn't work.
+	fmt.Println("~ nextNumber:", d)
+
+}
+
 ```
 
 ### 3. Type Set (Declare a type constraint| Custom type)
