@@ -11,7 +11,7 @@ You should care about generics because they mean you don’t have to write as mu
 Generics will finally give Go developers an elegant way to write amazing utility packages.
 
 ## Generics 3 main features
-* Type Parameter with cnstraint
+* Type Parameter with constraints
 * Type Inference
 * Type Set
 
