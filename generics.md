@@ -15,20 +15,24 @@ Generics will finally give Go developers an elegant way to write amazing utility
 * Type Inference
 * Type Set
 
-### 1. Type Parameter with cnstrain
+### 1. Type Parameter with constraints
 ```go
+package main
+import "fmt"
 
 func myFunc[T any](a T) T {
-    return a
-} 
-
-func myFunc[T interface{}](a T) T {
-    return a
+	return a
 }
+
+func main() {
+	a := myFunc[int](10)
+	fmt.Println(a)
+}
+
 ```
 #### Calling above function
 ```
-a:=myFunc[T int](10)
+a:=myFunc[int](10)
 fmt.Println(a)
 ```
 
