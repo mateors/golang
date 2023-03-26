@@ -82,22 +82,29 @@ func main() {
 ### 3. Type Set (Declare a type constraint| Custom type)
 
 ```go
+package main
 
-type myType interface{
- ~float64 | int64 //Declare a union of int64 and float64 inside the interface.
+import "fmt"
+
+type Number interface {
+	~float64 | int64 | int //Declare a union of int64 and float64 inside the interface.
 }
 
-func nextNumber[T myType](a T) T {
-    return a+1
+type Price float64
+
+func nextNumber[T Number](a T) T {
+	return a + 1
 }
 
-a:=nextNumber(7) 
-fmt.Println(a)
+func main() {
 
-type superInt float64
-var b superInt=7
-a:=nextNumber(7) 
-fmt.Println(a)
+	next := nextNumber(50)
+	fmt.Println("nextNumber:", next)
+
+	var p Price = 75.50
+	another := nextNumber(p)
+	fmt.Println("another nextNumber:", another)
+}
 
 ```
 
