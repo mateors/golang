@@ -78,6 +78,7 @@ Cleaning the go caches once fixed some “unknown import path”/“cannot find 
 
 ## Golang How to upgrade to Go 1.17 
 > go mod tidy -go=1.17
+> go mod edit -go 1.20
 
 ## Module on by default
 > go env -w GO111MODULE=auto
