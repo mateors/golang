@@ -113,3 +113,4 @@ import (
 * https://github.com/hasura/graphql-engine
 * https://hasura.io/graphql/database/
 * https://lecstor.com/go-cheatsheet
+* https://github.com/boyter/scc
