@@ -62,6 +62,8 @@ If you're using PowerShell, then changing values of environment variables should
 
 > $Env:GOOS = "linux"; $Env:GOARCH = "amd64"; go build -o hello
 
+> `$Env:GOOS="linux";$Env:GOARCH="amd64"; go build -ldflags '-w -s'`
+
 ### Cache clean command
 > go clean --cache
 
