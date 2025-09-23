@@ -64,6 +64,12 @@ If you're using PowerShell, then changing values of environment variables should
 
 > `$Env:GOOS="linux";$Env:GOARCH="amd64"; go build -ldflags '-w -s'`
 
+```
+pacman -S mingw-w64-x86_64-gcc
+```
+
+> `$Env:CGO_ENABLED="1"; $Env:CC="x86_64-w64-mingw32-gcc"; $Env:GOOS="windows"; $Env:GOARCH="amd64"; go build`
+
 ### Cache clean command
 > go clean --cache
 
