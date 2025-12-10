@@ -66,6 +66,10 @@ If you're using PowerShell, then changing values of environment variables should
 
 > `$env:PATH = "C:\msys64\mingw64\bin;" + $env:PATH;$Env:CGO_ENABLED="1";$Env:GOOS="windows";$Env:GOARCH="amd64";$Env:CC="x86_64-w64-mingw32-gcc"; go build`
 
+* https://copilot.microsoft.com/chats/eVrgP5Z4aePQiPmAiyMY2
+  
+* https://github.com/libvips/build-win64-mxe/releases
+
 ```
 pacman -S mingw-w64-x86_64-gcc
 ```
