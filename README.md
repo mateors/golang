@@ -21,7 +21,7 @@
 
 > go version
 
-## Permanently add the Golang executable path to the system's PATH environment variable for all users
+### Permanently add the Golang executable path to the system's PATH environment variable for all users
 The line written inside the go.sh file. It appends the directory `/usr/local/go/bin` (where Go is typically installed) to your existing system `PATH`.
 
 > `nano /etc/profile.d/go.sh`
