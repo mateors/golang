@@ -21,6 +21,23 @@
 
 > go version
 
+## Permanently add the Golang executable path to the system's PATH environment variable for all users
+The line written inside the go.sh file. It appends the directory `/usr/local/go/bin` (where Go is typically installed) to your existing system `PATH`.
+
+> `nano /etc/profile.d/go.sh`
+Define the path to the Go binaries.
+```
+export PATH=$PATH:/usr/local/go/bin
+```
+
+### Grants execute permissions (+x)
+Make the file executable so the system loads it on every login.
+```
+chmod +x /etc/profile.d/go.sh
+```
+### Why it matters?
+In Linux, any executable script placed inside `/etc/profile.d/` automatically runs whenever a user logs into the system. This ensures configuration changes are applied globally and permanently.
+ 
 
 ## Data type detection
 dataFields interface{}
